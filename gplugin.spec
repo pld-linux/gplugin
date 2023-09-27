@@ -29,7 +29,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python3-devel >= 1:3.7
 BuildRequires:	python3-pygobject3-devel >= 3.0.0
 BuildRequires:	rpm-build >= 4.6
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.029
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala
 BuildRequires:	xz
@@ -206,9 +206,8 @@ rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
 %if %{with apidocs}
-# FIXME: where to package gi-docgen generated docs?
-install -d $RPM_BUILD_ROOT%{_gtkdocdir}
-%{__mv} $RPM_BUILD_ROOT%{_docdir}/gplugin* $RPM_BUILD_ROOT%{_gtkdocdir}
+install -d $RPM_BUILD_ROOT%{_gidocdir}
+%{__mv} $RPM_BUILD_ROOT%{_docdir}/gplugin* $RPM_BUILD_ROOT%{_gidocdir}
 %endif
 
 %clean
@@ -261,7 +260,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
-%{_gtkdocdir}/gplugin
+%{_gidocdir}/gplugin
 %endif
 
 %files gtk4
@@ -293,5 +292,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with apidocs}
 %files gtk4-apidocs
 %defattr(644,root,root,755)
-%{_gtkdocdir}/gplugin-gtk4
+%{_gidocdir}/gplugin-gtk4
 %endif
