@@ -6,34 +6,34 @@
 Summary:	GPlugin plugin library
 Summary(pl.UTF-8):	GPlugin - biblioteka wtyczek
 Name:		gplugin
-Version:	0.40.0
+Version:	0.44.2
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/pidgin/%{name}-%{version}.tar.xz
-# Source0-md5:	0665bdb2244bbbdecb78fcef495d06a2
+# Source0-md5:	57783f9fa1ca5934b1b630d5331d7b17
 URL:		https://keep.imfreedom.org/gplugin/gplugin/
 # -std=c17
 BuildRequires:	gcc >= 6:7
 %{?with_apidocs:BuildRequires:	gi-docgen >= 2021.1}
-BuildRequires:	glib2-devel >= 1:2.70.0
+BuildRequires:	glib2-devel >= 1:2.76.0
 BuildRequires:	gobject-introspection-devel
-BuildRequires:	gtk4-devel >= 4.0.0
+BuildRequires:	gtk4-devel >= 4.10.0
 BuildRequires:	help2man
 # require highest lua version for which lgi module is available
 BuildRequires:	lua51-devel >= 5.1.0
 BuildRequires:	lua-lgi
-BuildRequires:	meson >= 0.61.0
+BuildRequires:	meson >= 1.0.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	python3-devel >= 1:3.7
+BuildRequires:	python3-devel >= 1:3.8
 BuildRequires:	python3-pygobject3-devel >= 3.0.0
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.029
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala
 BuildRequires:	xz
-Requires:	glib2 >= 1:2.70.0
+Requires:	glib2 >= 1:2.76.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -79,7 +79,7 @@ Summary:	Header files for GPlugin library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GPlugin
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.70.0
+Requires:	glib2-devel >= 1:2.76.0
 
 %description devel
 Header files for GPlugin library.
@@ -130,7 +130,7 @@ Summary:	GPlugin Gtk4 library
 Summary(pl.UTF-8):	Biblioteka GPlugin Gtk4
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk4 >= 4.0.0
+Requires:	gtk4 >= 4.10.0
 
 %description gtk4
 GTK4 integration for GPlugin library.
@@ -144,7 +144,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GPlugin Gtk4
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-gtk4 = %{version}-%{release}
-Requires:	gtk4-devel >= 4.0.0
+Requires:	gtk4-devel >= 4.10.0
 
 %description gtk4-devel
 Header files for GPlugin Gtk4 library.
