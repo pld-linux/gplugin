@@ -7,7 +7,7 @@ Summary:	GPlugin plugin library
 Summary(pl.UTF-8):	GPlugin - biblioteka wtyczek
 Name:		gplugin
 Version:	0.44.2
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/pidgin/%{name}-%{version}.tar.xz
